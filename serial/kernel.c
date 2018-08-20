@@ -31,7 +31,7 @@ static void serial_init(void) {
   cpu_out8(COM1 + 4, 0x0B); // IRQs enabled, RTS/DSR set
 }
 
-static int serial_wait(void) {
+static void serial_wait(void) {
   while (!(0x20 & cpu_in8(COM1 + 5))) {
   }
 }
